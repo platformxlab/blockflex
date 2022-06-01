@@ -2,7 +2,15 @@
 BlockFlex is our learning-based storage harvesting framework, which can harvest flash-based storage resources at fine-grained granularity in modern clould platforms.
 
 ## 1. Overview
-The following packages are necessary to install before running the following scripts. Please check our GitHub repo for the traces, code and scripts https://github.com/breidys2/BlockFlex.
+
+This README outlines the contents of the repo and how to reproduce the results from the paper.
+Section 2 outlines the trace analysis for improved storage utilization, section 3 evaluates the
+predictors of BlockFlex, and section 4 runs BlockFlex itself. Note that a functioning open channel
+SSD is required and users may have to modify the code to call the respective read/write/erase
+functions of their SSD.
+
+The following packages are necessary to install before running the following scripts.
+
 ```shell
 #Easy command line download of google drive files
 pip3 install gdown
@@ -166,7 +174,7 @@ The preparation scripts mimic the statistic collections of BlockFlex by reportin
 
 ```shell
 #Enter the prep directory
-cd Prep/
+cd Predctions/Prep/
 
 #Download the traces (~21 GB)
 gdown 1hWZJOKNyumce0UNo45zb3_pfyytwg2YC
@@ -223,8 +231,6 @@ mkdir outputs/dur_sz
 ```
 
 ## 4. BlockFlex
-We provide an internet-accessible machine to our programmable SSD platform. Currently, it is only available for artifact evaluation purposes. Please contact us for accessing the machine. 
-
 You will find two directories under BlockFlex: ocssd/ and blockflex/. Directory ocssd/ contains the iSCSI virtual disk environment, the management scripts and the workload replayer. Directory blockflex/ contains the main repo for the BlockFlex framework. The BlockFlex repository is (partially) structured as following:
 
 ```shell
